@@ -7,6 +7,9 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+// Empty when the client and API share a deployment. Otherwise use the public API URL.
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+
 const IMAGES = [
   "https://inspiring-parfait-e5f70a.netlify.app/1.png",
   "https://inspiring-parfait-e5f70a.netlify.app/2.png",
@@ -53,7 +56,7 @@ function App() {
     setSending(true);
 
     try {
-      const response = await fetch("/api/orders", {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

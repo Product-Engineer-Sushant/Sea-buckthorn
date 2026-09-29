@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
-
 :root{
   --green:#164c37; --green2:#236b4d; --orange:#f36a21; --cream:#fffaf0;
   --ink:#16201b; --muted:#69736d; --line:#e8e4d9; --white:#fff;

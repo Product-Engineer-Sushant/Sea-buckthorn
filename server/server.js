@@ -2,13 +2,20 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const clientOrigin = process.env.CLIENT_ORIGIN
+  ?.split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
-app.use(cors());
+app.use(cors({ origin: clientOrigin?.length ? clientOrigin : true }));
 app.use(express.json());
 
 const requiredEnv = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "ORDER_EMAIL"];
@@ -128,6 +135,16 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
+// A single production Node deployment serves both the compiled client and API.
+const distPath = path.resolve(__dirname, "../dist");
+app.use(express.static(distPath));
+app.get("*", (req, res, next) => {
+  if (req.path.startsWith("/api/")) return next();
+  res.sendFile(path.join(distPath, "index.html"), (error) => {
+    if (error) next(error);
+  });
+});
+
 app.listen(PORT, () => {
-  console.log(`Order server running on http://localhost:${PORT}`);
+  console.log(`Order server listening on port ${PORT}`);
 });

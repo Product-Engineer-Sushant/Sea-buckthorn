@@ -47,10 +47,27 @@ Fill the order form and click "Confirm Order & Send Email".
 The server sends the order details to `ORDER_EMAIL`.
 
 ## 5. Production
-You need to deploy both:
-- React frontend
-- Node/Express server
 
-Set the same environment variables on your hosting provider. Do not upload `.env` to GitHub.
+Vite's `/api` proxy only works locally. The order form needs the Express server,
+because the server sends the email.
 
-The frontend calls `/api/orders`, so if frontend and backend are on different domains, configure a production API URL/proxy accordingly.
+### One Node service (recommended)
+
+Deploy this repository to Render, Railway, or another Node host.
+
+- Build command: `npm run build`
+- Start command: `npm start`
+- Add `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, and
+  `ORDER_EMAIL` in the host's environment-variable dashboard.
+- Optionally set `CLIENT_ORIGIN` to the public site URL (comma-separate multiple
+  allowed frontend URLs).
+
+The server now serves the compiled `dist` site and API together, so no API URL is
+needed for this layout.
+
+### Separate frontend and backend deployments
+
+Deploy the backend using `npm start` and set its SMTP variables. On the frontend
+host, set `VITE_API_URL=https://your-public-api-domain.com` **before** building
+and redeploy. Set `CLIENT_ORIGIN` on the backend to the frontend's exact public
+URL. Never use `localhost` in production values, and never commit `.env`.
