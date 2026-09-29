@@ -66,9 +66,17 @@ function App() {
         })
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type") || "";
+      const data = contentType.includes("application/json")
+        ? await response.json()
+        : null;
 
-      if (!response.ok || !data.success) {
+      if (!response.ok || !data?.success) {
+        if (!data) {
+          throw new Error(
+            "Order API is not available. Deploy the Express server and set VITE_API_URL to its public URL."
+          );
+        }
         throw new Error(data.message || "Order could not be sent.");
       }
 
