@@ -71,3 +71,11 @@ Deploy the backend using `npm start` and set its SMTP variables. On the frontend
 host, set `VITE_API_URL=https://your-public-api-domain.com` **before** building
 and redeploy. Set `CLIENT_ORIGIN` on the backend to the frontend's exact public
 URL. Never use `localhost` in production values, and never commit `.env`.
+
+### Vercel deployment
+
+This repository includes Vercel serverless functions at `/api/orders` and
+`/api/health`, so the frontend and order API can use the same Vercel domain.
+In **Vercel → Project → Settings → Environment Variables**, add the six SMTP
+variables listed above for the Production environment, then redeploy. Do not
+set `VITE_API_URL` for the included same-domain Vercel API.
