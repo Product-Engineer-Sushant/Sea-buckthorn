@@ -7,16 +7,21 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+import img1 from "../src/assets/images/1.png"
+import img2 from "../src/assets/images/2.png"
+import img3 from "../src/assets/images/3.png"
+import img4 from "../src/assets/images/4.png"
+import img5 from "../src/assets/images/5.jpeg"
+
 // Empty when the client and API share a deployment. Otherwise use the public API URL.
 const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 const IMAGES = [
-  "../src/assets/images/1.png",
-  "../src/assets/images/2.png",
-  "../src/assets/images/3.png",
-  "../src/assets/images/4.png",
-  "../src/assets/images/5.jpeg"
-  
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
 ];
 
 const benefits = [
@@ -146,7 +151,7 @@ function App() {
             </div>
           </div>
         </section>
-          <div className="px-8 mb-4 -mt-8">
+          <div className="px-8 mb-4 -mt-8 flex justify-center items-center">
             <img src="../src/assets/images/5.jpeg" />
           </div>
         
