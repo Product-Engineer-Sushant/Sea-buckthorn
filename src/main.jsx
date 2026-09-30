@@ -31,7 +31,7 @@ const benefits = [
     [ "बुढ्यौलीको लक्षण कम गर्छ (Anti-Aging)", "छालालाई healthy र youthful देखिन मद्दत गर्दै aging का visible signs कम गर्न सहयोग गर्छ।" ], 
     [ "दाग र खत पुरिन मद्दत गर्छ (Fades Scars)", "छालामा देखिने दाग तथा scars को appearance कम गर्न सहयोग गर्छ।" ], 
     [ "घाम र प्रदूषणबाट सुरक्षा (Skin Barrier Protection)", "बाहिरी environmental stress बाट छालाको natural skin barrier लाई support गर्न मद्दत गर्छ।" ], 
-    [ "चाउरी र Fine Lines कम गर्न सहयोग", "Fine lines तथा wrinkles को appearance कम देखिन र छालालाई smoother देखिन सहयोग गर्छ।" ],
+    [ "चाउरी र Fine Lines कम गर्न सहयोग", "Fine Lines तथा wrinkles को appearance कम देखिन र छालालाई smoother देखिन सहयोग गर्छ।" ],
     [" Suitable for All Types of Skin, No Any Effect. "]
   ]
 
