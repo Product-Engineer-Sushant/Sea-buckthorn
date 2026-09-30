@@ -24,13 +24,14 @@ const IMAGES = [
   img5,
 ];
 
-const benefits = [
-  ["✨", "Intense Skin Brightening", "Vitamin C and antioxidant-rich ingredients help support a more even-looking, radiant complexion."],
-  ["💧", "Deep Hydration & Repair", "Helps replenish moisture and leaves skin feeling soft, smooth and nourished."],
-  ["🌿", "Antioxidant Care", "Sea buckthorn is naturally rich in antioxidants and essential fatty acids."],
-  ["🌸", "Lightweight & Non-Greasy", "A fast-absorbing facial oil designed to fit easily into a daily skincare routine."]
-];
-
+const benefits = [ 
+    [ "छालामा चमक र उज्यालोपन (Natural Glow)", "छालालाई प्राकृतिक रूपमा चम्किलो, उज्यालो र fresh देखिन मद्दत गर्छ।" ], 
+    [ "डन्डीफोर र डाबर कम गर्छ (Acne & Inflammation Control)", "डन्डीफोर, redness र छालामा हुने irritation कम गर्न सहयोग गर्छ।" ], 
+    [ "छालालाई गहिरो ओसिलोपन दिन्छ (Deep Hydration)", "छालामा आवश्यक moisture कायम राख्न मद्दत गर्दै skin लाई soft, smooth र hydrated राख्छ।" ], 
+    [ "बुढ्यौलीको लक्षण कम गर्छ (Anti-Aging)", "छालालाई healthy र youthful देखिन मद्दत गर्दै aging का visible signs कम गर्न सहयोग गर्छ।" ], 
+    [ "दाग र खत पुरिन मद्दत गर्छ (Fades Scars)", "छालामा देखिने दाग तथा scars को appearance कम गर्न सहयोग गर्छ।" ], 
+    [ "घाम र प्रदूषणबाट सुरक्षा (Skin Barrier Protection)", "बाहिरी environmental stress बाट छालाको natural skin barrier लाई support गर्न मद्दत गर्छ।" ], 
+    [ "चाउरी र Fine Lines कम गर्न सहयोग", "Fine lines तथा wrinkles को appearance कम देखिन र छालालाई smoother देखिन सहयोग गर्छ।" ] ];
 const steps = [
   ["01", "Cleanse", "Wash your face and gently pat dry."],
   ["02", "Apply", "Take 2–4 drops onto your fingertips."],
@@ -156,7 +157,7 @@ function App() {
           </div>
         
         <section >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:mx-34">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:mx-34">
               {/* Left Side */}
               <div className="p-8">
                 <div className="sectionHead">
@@ -164,14 +165,12 @@ function App() {
                   <h2>
                     Simple care. <em>Natural glow.</em>
                   </h2>
-                  <p>Designed for an easy everyday skincare routine.</p>
                 </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {benefits.map(([icon, title, text]) => (
-                  <article className="benefit" key={title}>
-                    <div className="benefitIcon">{icon}</div>
-                    <h3>{title}</h3>
+                  <article className="border border-gray-300 p-4 rounded-xl" key={title}>
+                    <h3 className="font-semibold">{title}</h3>
                     <p>{text}</p>
                   </article>
                 ))}
