@@ -129,7 +129,7 @@ function App() {
             <div className="priceRow">
               <strong>Rs. 1000</strong>
               <del>Rs. 1,899</del>
-              <span>Save Rs. 700</span>
+              <span>Save Rs. 899</span>
             </div>
 
             <p className="description">
