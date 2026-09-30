@@ -11,11 +11,11 @@ import "./styles.css";
 const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 const IMAGES = [
-  "https://inspiring-parfait-e5f70a.netlify.app/1.png",
-  "https://inspiring-parfait-e5f70a.netlify.app/2.png",
-  "https://inspiring-parfait-e5f70a.netlify.app/3.png",
-  "https://inspiring-parfait-e5f70a.netlify.app/4.png",
-  "https://inspiring-parfait-e5f70a.netlify.app/5.png"
+  "../src/assets/images/1.png",
+  "../src/assets/images/2.png",
+  "../src/assets/images/3.png",
+  "../src/assets/images/4.png",
+  "../src/assets/images/5.jpeg"
   
 ];
 
@@ -144,14 +144,11 @@ function App() {
               <ShoppingBag size={20}/> Order Now — Cash on Delivery 
             </button>
             </div>
-
-            <div className="trust !flex justify-between mx-8">
-              <div><MessageCircle/> WhatsApp order</div>
-              <div><Truck/> Cash on delivery</div>
-              <div><ShieldCheck/> 7 Days Replacement</div>
-            </div>
           </div>
         </section>
+          <div className="px-8 mb-4 -mt-8">
+            <img src="../src/assets/images/5.jpeg" />
+          </div>
         
         <section >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:mx-34">
@@ -178,6 +175,7 @@ function App() {
 
               {/* Right Side */}
               <div className="p-8">
+                
                 <div className="howCopy">
                   <span className="kicker">HOW TO USE</span>
                   <h2>Your 4-step <em>glow routine</em></h2>
