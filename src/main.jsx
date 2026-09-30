@@ -152,7 +152,7 @@ function App() {
           </div>
         </section>
           <div className="px-8 mb-4 -mt-8 flex justify-center items-center">
-            <img src="../src/assets/images/5.jpeg" />
+            <img src={img5} />
           </div>
         
         <section >
